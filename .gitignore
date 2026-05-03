@@ -35,3 +35,5 @@ Thumbs.db
 
 # Memory file (optional - if you don't want to track runs)
 memory/memory_store.json
+
+.env  # if you have environment variables stored here

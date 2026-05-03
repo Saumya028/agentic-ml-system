@@ -6,6 +6,7 @@ from agents.preprocessing_agent import PreprocessingAgent
 from agents.model_agent import ModelAgent
 from agents.evaluation_agent import EvaluationAgent
 from agents.insight_agent import InsightAgent
+from agents.code_generation_agent import CodeGenerationAgent
 
 
 from utils.helpers import save_memory
@@ -21,6 +22,7 @@ preprocessor = PreprocessingAgent()
 model_agent = ModelAgent()
 evaluator = EvaluationAgent()
 insight_agent = InsightAgent()
+code_agent = CodeGenerationAgent()
 
 for i in range(ITERATIONS):
     print(f"\n--- Iteration {i+1} ---")
@@ -51,3 +53,8 @@ for i in range(ITERATIONS):
     report = insight_agent.generate_report(df, summary, decision)
     print("\n===== DATA REPORT =====")
     print(report)
+
+generated_code = code_agent.generate_code(summary, decision, best_model)
+
+print("\n===== GENERATED ML CODE =====\n")
+print(generated_code)
